@@ -3,9 +3,9 @@ var router = express.Router();
 
 const send = require('gmail-send')({
   user: 'arteycuero.sergio@gmail.com',
-  pass: 'ajnhwkycvgojtlgl',
-  to: ['msamores@gmail.com'],
-  subject: 'inortia.com'
+  pass: 'itphbdjqqibmrmkx',
+  to: ['ssanchezba02@gmail.com'],
+  subject: 'arteycuero.info'
 });
 
 var enviar = function (newOptions, callback) {
@@ -34,13 +34,13 @@ router.post('/formulario', function(req, res, next) {
   <div>
     <span> Nombre: ${req.body.nombre || "?"} </span>
     <br>
-    <span> Telefono: ${req.body.telefono || "?"} </span>
+    <span> Apellidos: ${req.body.apellidos || "?"} </span>
     <br>
     <span> Correo: ${req.body.email || "?"} </span>
     <br>
-    <span> Coste: ${req.body.coste || "?"} </span>
+    <span> Telefono: ${req.body.phone || "?"} </span>
     <br>
-    <span> Capital: ${req.body.capital || "?"} </span>
+    <span> Mensaje: ${req.body.message || "?"} </span>
   </div>
   `;
   enviar(
@@ -51,7 +51,7 @@ router.post('/formulario', function(req, res, next) {
       if (err) {
         res.status(500).send(err);
       } else {
-        res.status(200).send(response);
+        res.redirect('/gracias.html');
       }
     }
   );

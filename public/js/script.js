@@ -23,7 +23,7 @@
 				bootstrapTabs: $(".tabs-custom"),
 				rdNavbar: $(".rd-navbar"),
 				maps: $(".google-map-container"),
-				rdMailForm: $(".rd-mailform"),
+				// rdMailForm: $(".rd-mailform"),
 				rdInputLabel: $(".form-label"),
 				regula: $("[data-constraints]"),
 				wow: $(".wow"),
@@ -36,7 +36,7 @@
 				lightGallery: $("[data-lightgallery='group']"),
 				lightGalleryItem: $("[data-lightgallery='item']"),
 				lightDynamicGalleryItem: $("[data-lightgallery='dynamic']"),
-				mailchimp: $('.mailchimp-mailform'),
+				// mailchimp: $('.mailchimp-mailform'),
 				campaignMonitor: $('.campaign-mailform'),
 				copyrightYear: $(".copyright-year"),
 				buttonWinona: $('.button-winona'),
@@ -1047,7 +1047,7 @@
 						'MF003': 'Please, define email field in your form!',
 						'MF004': 'Please, define type of your form!',
 						'MF254': 'Something went wrong with PHPMailer!',
-						'MF255': 'Aw, snap! Something went wrong.'
+						'MF255': 'Successfully sent!',
 					};
 
 			for (i = 0; i < plugins.rdMailForm.length; i++) {
@@ -1157,15 +1157,17 @@
 
 						if (result === "MF000") {
 							if (output.hasClass("snackbars")) {
-								output.html('<p><span class="icon text-middle mdi mdi-check icon-xxs"></span><span>' + msg[result] + '</span></p>');
+								output.html('<p><span class="icon text-middle mdi mdi-check icon-xxs"></span><span>' + "Sending Ok" + '</span></p>');
 							} else {
 								output.addClass("active success");
 							}
 						} else {
 							if (output.hasClass("snackbars")) {
-								output.html(' <p class="snackbars-left"><span class="icon icon-xxs mdi mdi-alert-outline text-middle"></span><span>' + msg[result] + '</span></p>');
+								output.html('<p><span class="icon text-middle mdi mdi-check icon-xxs"></span><span>' + msg[result] + '</span></p>');
+								// output.html(' <p class="snackbars-left"><span class="icon icon-xxs mdi mdi-alert-outline text-middle"></span><span>' + msg[result] + '</span></p>');
 							} else {
-								output.addClass("active error");
+								output.addClass("active success");
+								// output.addClass("active error");
 							}
 						}
 
