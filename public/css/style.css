@@ -5648,6 +5648,12 @@ html:not(.tablet):not(.mobile) .thumbnail-indigo:hover .thumbnail-indigo-caption
 	}
 }
 
+.footer-advanced {
+	position: static;
+    bottom: 0;
+    width: 100%;
+}
+
 .footer-advanced.bg-gray-700 h1,
 .footer-advanced.bg-gray-700 h2,
 .footer-advanced.bg-gray-700 h3,
